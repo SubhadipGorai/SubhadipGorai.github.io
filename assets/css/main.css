@@ -780,7 +780,7 @@ section,
 
 #cl_button{
   cursor: pointer;
-  color: red;
+  color: rgb(0, 255, 42);
   font-size: x-large;
   margin-left: 10px;
 }
