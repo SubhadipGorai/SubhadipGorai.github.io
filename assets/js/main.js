@@ -160,4 +160,33 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  
 })();
+
+function sendEmail(){
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "subhadip1302@gmail.com",
+    Password : "70058B4350C206C62B0AA7ADBFF015A6409D",
+    To : "subhadip1302@gmail.com",
+    From : "subhadip1302@gmail.com",
+    Subject : "New Contact Query from "+ document.querySelector("#formName").value,
+    Body : "Name : "+ document.querySelector("#formName").value+"<br> Email Id : "+ document.querySelector("#formMail").value+"<br> Subject : "+ document.querySelector("#formSub").value+"<br>Message : "+document.querySelector("#formMesg").value,
+}).then(
+  
+);
+}
+
+let form=document.querySelector("#form");
+let success=document.querySelector(".success");
+
+form.addEventListener("submit",(evt)=>{
+  success.classList.remove("hide");
+  evt.preventDefault();
+})
+
+let close=document.querySelector("#cl_button");
+
+close.addEventListener("click",()=>{
+  success.classList.add("hide");
+})

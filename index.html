@@ -355,28 +355,32 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form onsubmit="sendEmail(); reset(); return false;" id="form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" id="formName" class="form-control" placeholder="Your Name" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input type="email" class="form-control" id="formMail" placeholder="Your Email" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" class="form-control" id="formSub" placeholder="Subject" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" id="formMesg" rows="6" placeholder="Message" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
 
                   <button type="submit">Send Message</button>
+                  <div class="success col-md-12 text-center " data-aos="fade-up" data-aos-delay="100">
+                    Your Response is Recorded Successfully. Thank You!  
+                    <span id="cl_button"><i class="bi bi-x-square"></i></span>
+                  </div>
                 </div>
 
               </div>
@@ -388,7 +392,6 @@
       </div>
 
     </section><!-- /Contact Section -->
-
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
@@ -422,6 +425,7 @@
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
